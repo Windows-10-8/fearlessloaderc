@@ -252,7 +252,6 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, PSTR, int)
     ImGui::CreateContext();
     ImGuiIO& io = ImGui::GetIO();
     io.Fonts->AddFontFromFileTTF("C:\\Windows\\Fonts\\Tahoma.ttf", 16);
-    
     ImGui::GetStyle().WindowRounding = 0.0f;
     ImGui::GetStyle().WindowPadding = ImVec2(0.0f, 0.0f);
     ImGui::GetStyle().ChildRounding = 0.0f;
@@ -294,6 +293,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, PSTR, int)
         ImGui::NewFrame();
 
         {
+
             ImGui::SetNextWindowPos(ImVec2(0, 0));
             ImGui::SetNextWindowSize(ImVec2(LOADERW, LOADERH));
             ImGui::Begin(xorstr("FearLess.cc"), &opened, ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoSavedSettings | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoBackground); // Create a window called "Hello, world!" and append into it.
@@ -314,6 +314,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, PSTR, int)
             ImGui::SetCursorPos(ImVec2(64, 100));
             ImGui::InputText(xorstr("###Key"), buf, IM_ARRAYSIZE(buf));
             ImGui::PopItemWidth();
+            
 
             ImGui::SetCursorPos(ImVec2(66, 120));
             ImGui::Text(xorstr("Password"));
