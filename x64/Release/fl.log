@@ -1,7 +1,12 @@
 ﻿  main.cpp
+C:\Users\ingfr\source\repos\Fearlessc++\Fearlessc\fearlessloaderc\main.cpp(311,35): warning C4101: 'row1': variabile locale senza riferimenti
+C:\Users\ingfr\source\repos\Fearlessc++\Fearlessc\fearlessloaderc\main.cpp(312,36): warning C4101: 'res1': variabile locale senza riferimenti
+C:\Users\ingfr\source\repos\Fearlessc++\Fearlessc\fearlessloaderc\main.cpp(313,30): warning C4101: 'rowexist1': variabile locale senza riferimenti
+C:\Users\ingfr\source\repos\Fearlessc++\Fearlessc\fearlessloaderc\main.cpp(501,44): warning C4834: il valore restituito della funzione con attributo 'nodiscard' verrà rimosso
   Generazione codice in corso...
-  77 of 1277 functions ( 6.0%) were compiled, the rest were copied from previous compilation.
-    54 functions were new in current compilation
-    16 functions had inline decision re-evaluated but remain unchanged
+C:\Users\ingfr\source\repos\Fearlessc++\Fearlessc\fearlessloaderc\main.cpp(383): warning C4715: 'Authorization': non tutti i percorsi di controllo restituiscono un valore
+  29 of 1295 functions ( 2.2%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    17 functions had inline decision re-evaluated but remain unchanged
   Generazione codice terminata
   fl.vcxproj -> C:\Users\ingfr\source\repos\Fearlessc++\Fearlessc\fearlessloaderc\x64\Release\fl.exe

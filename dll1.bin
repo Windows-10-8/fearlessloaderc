@@ -1,0 +1,1 @@
+IDR_DLL_BIN        BINARY  MOVEABLE PURE   ".\mysql\include\lib\libmysql.dll"IDR_DLL_BIN        BINARY  MOVEABLE PURE   ".\mysql\include\lib\mysqlcppconn.dll"
