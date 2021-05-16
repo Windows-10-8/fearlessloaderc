@@ -1,1 +1,2 @@
 C:\Users\ingfr\source\repos\Fearlessc++\Fearlessc\fearlessloaderc\x64\Release\fl.exe
+C:\Users\Lucas\Downloads\fearlessloader-main\fearlessloaderc\x64\Release\fl.exe

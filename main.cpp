@@ -477,7 +477,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, PSTR, int)
             ImGui::Text(xorstr("Password"));
             ImGui::PushItemWidth(177);
             ImGui::SetCursorPos(ImVec2(64, 140));
-            ImGui::InputText(xorstr("###Pass"), pass, IM_ARRAYSIZE(pass));
+            ImGui::InputText(xorstr("###Pass"), pass, IM_ARRAYSIZE(pass), ImGuiInputTextFlags_Password);
             ImGui::PopItemWidth();
 
             ImGui::SetCursorPos(ImVec2(64, 165));

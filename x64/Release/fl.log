@@ -1,12 +1,18 @@
-﻿  main.cpp
-C:\Users\ingfr\source\repos\Fearlessc++\Fearlessc\fearlessloaderc\main.cpp(311,35): warning C4101: 'row1': variabile locale senza riferimenti
-C:\Users\ingfr\source\repos\Fearlessc++\Fearlessc\fearlessloaderc\main.cpp(312,36): warning C4101: 'res1': variabile locale senza riferimenti
-C:\Users\ingfr\source\repos\Fearlessc++\Fearlessc\fearlessloaderc\main.cpp(313,30): warning C4101: 'rowexist1': variabile locale senza riferimenti
-C:\Users\ingfr\source\repos\Fearlessc++\Fearlessc\fearlessloaderc\main.cpp(501,44): warning C4834: il valore restituito della funzione con attributo 'nodiscard' verrà rimosso
-  Generazione codice in corso...
-C:\Users\ingfr\source\repos\Fearlessc++\Fearlessc\fearlessloaderc\main.cpp(383): warning C4715: 'Authorization': non tutti i percorsi di controllo restituiscono un valore
-  29 of 1295 functions ( 2.2%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    17 functions had inline decision re-evaluated but remain unchanged
-  Generazione codice terminata
-  fl.vcxproj -> C:\Users\ingfr\source\repos\Fearlessc++\Fearlessc\fearlessloaderc\x64\Release\fl.exe
+﻿  imgui.cpp
+  imgui_demo.cpp
+  imgui_draw.cpp
+  imgui_impl_dx9.cpp
+  imgui_impl_win32.cpp
+  imgui_widgets.cpp
+C:\Users\Lucas\Downloads\fearlessloader-main\fearlessloaderc\imgui\imgui_widgets.cpp(1076,85): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  main.cpp
+C:\Users\Lucas\Downloads\fearlessloader-main\fearlessloaderc\main.cpp(311,35): warning C4101: 'row1': unreferenced local variable
+C:\Users\Lucas\Downloads\fearlessloader-main\fearlessloaderc\main.cpp(312,36): warning C4101: 'res1': unreferenced local variable
+C:\Users\Lucas\Downloads\fearlessloader-main\fearlessloaderc\main.cpp(313,30): warning C4101: 'rowexist1': unreferenced local variable
+C:\Users\Lucas\Downloads\fearlessloader-main\fearlessloaderc\main.cpp(501,44): warning C4834: discarding return value of function with 'nodiscard' attribute
+  Generating code
+  Previous IPDB was built with incompatible compiler, fall back to full compilation.
+C:\Users\Lucas\Downloads\fearlessloader-main\fearlessloaderc\main.cpp(383): warning C4715: 'Authorization': not all control paths return a value
+  All 1295 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  fl.vcxproj -> C:\Users\Lucas\Downloads\fearlessloader-main\fearlessloaderc\x64\Release\fl.exe
