@@ -115,7 +115,7 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>%(AdditionalDependencies);</AdditionalDependencies>
-      <UACExecutionLevel>RequireAdministrator</UACExecutionLevel>
+      <UACExecutionLevel>HighestAvailable</UACExecutionLevel>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -163,6 +163,8 @@
     <ClInclude Include="Auther\protection.h" />
     <ClInclude Include="Backend\Authorization.h" />
     <ClInclude Include="Font.h" />
+    <ClInclude Include="hihihihhihi.h" />
+    <ClInclude Include="Icondapizda.h" />
     <ClInclude Include="Icons.h" />
     <ClInclude Include="imgui\imconfig.h" />
     <ClInclude Include="imgui\imgui.h" />
@@ -175,7 +177,10 @@
     <ClInclude Include="imgui\stringimgui.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="SecondFont.h" />
+    <ClInclude Include="singleton.h" />
     <ClInclude Include="skCrypter.h" />
+    <ClInclude Include="skmed.h" />
+    <ClInclude Include="sksemi.h" />
     <ClInclude Include="xorstr.h" />
   </ItemGroup>
   <ItemGroup>

