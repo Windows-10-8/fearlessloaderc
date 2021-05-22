@@ -387,24 +387,24 @@ int Authorization(std::string name, std::string pass)
 
 void renderpizda()
 {
-    ImGui::SetCursorPos(ImVec2(307 / 2 - ImGui::CalcTextSize(xorstr("FearLess.cc")).x / 2, 15));
+    ImGui::SetCursorPos(ImVec2(357 / 2 - ImGui::CalcTextSize(xorstr("FearLess.cc")).x / 2, 15));
     ImGui::Text(xorstr("FearLess.cc"));
-    ImGui::SetCursorPos(ImVec2(66, 81));
+    ImGui::SetCursorPos(ImVec2(96, 81));
     ImGui::Text(xorstr("UserName"));
     ImGui::PushItemWidth(177);
-    ImGui::SetCursorPos(ImVec2(64, 100));
+    ImGui::SetCursorPos(ImVec2(94, 100));
     ImGui::InputText(xorstr("###Key"), buf, IM_ARRAYSIZE(buf));
     ImGui::PopItemWidth();
 
 
-    ImGui::SetCursorPos(ImVec2(66, 120));
+    ImGui::SetCursorPos(ImVec2(96, 120));
     ImGui::Text(xorstr("Password"));
     ImGui::PushItemWidth(177);
-    ImGui::SetCursorPos(ImVec2(64, 140));
+    ImGui::SetCursorPos(ImVec2(94, 140));
     ImGui::InputText(xorstr("###Pass"), pass, IM_ARRAYSIZE(pass), ImGuiInputTextFlags_Password);
     ImGui::PopItemWidth();
 
-    ImGui::SetCursorPos(ImVec2(64, 165));
+    ImGui::SetCursorPos(ImVec2(94, 165));
     if (ImGui::Button(xorstr("Login"), ImVec2(177, 21))) {
         key = buf;
         passy = pass;
@@ -470,31 +470,31 @@ void renderpizda()
 
 void renderr()
 {
-    ImGui::SetCursorPos(ImVec2(307 / 2 - ImGui::CalcTextSize(xorstr("FearLess.cc")).x / 2, 15));
+    ImGui::SetCursorPos(ImVec2(357 / 2 - ImGui::CalcTextSize(xorstr("FearLess.cc")).x / 2, 15));
     ImGui::Text(xorstr("FearLess.cc"));
-    ImGui::SetCursorPos(ImVec2(66, 81));
+    ImGui::SetCursorPos(ImVec2(96, 81));
     ImGui::Text(xorstr("UserName"));
     ImGui::PushItemWidth(177);
-    ImGui::SetCursorPos(ImVec2(64, 100));
+    ImGui::SetCursorPos(ImVec2(94, 100));
     ImGui::InputText(xorstr("###User"), userregisterp, IM_ARRAYSIZE(userregisterp));
     ImGui::PopItemWidth();
 
 
-    ImGui::SetCursorPos(ImVec2(66, 120));
+    ImGui::SetCursorPos(ImVec2(96, 120));
     ImGui::Text(xorstr("Password"));
     ImGui::PushItemWidth(177);
-    ImGui::SetCursorPos(ImVec2(64, 140));
-    ImGui::InputText(xorstr("###Pass"), passregisterp, IM_ARRAYSIZE(passregisterp));
+    ImGui::SetCursorPos(ImVec2(94, 140));
+    ImGui::InputText(xorstr("###Pass"), passregisterp, IM_ARRAYSIZE(passregisterp), ImGuiInputTextFlags_Password);
     ImGui::PopItemWidth();
 
-    ImGui::SetCursorPos(ImVec2(68, 160));
+    ImGui::SetCursorPos(ImVec2(96, 160));
     ImGui::Text(xorstr("Invite"));
     ImGui::PushItemWidth(177);
-    ImGui::SetCursorPos(ImVec2(64, 180));
+    ImGui::SetCursorPos(ImVec2(94, 180));
     ImGui::InputText(xorstr("###Inv"), registerinvp, IM_ARRAYSIZE(registerinvp));
     ImGui::PopItemWidth();
 
-    ImGui::SetCursorPos(ImVec2(64, 207));
+    ImGui::SetCursorPos(ImVec2(94, 207));
     if (ImGui::Button(xorstr("Register"), ImVec2(177, 21))) {
         // nothingM do register here
 
@@ -569,7 +569,7 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, PSTR, int)
             ImGui::SetCursorPos(ImVec2(0, 0));
             ImGui::GetWindowDrawList()->AddRectFilled(ImVec2(), ImVec2(55, 540), ImColor(46, 46, 72));
 
-            ImGui::SetCursorPos(ImVec2(0, 40));
+            ImGui::SetCursorPos(ImVec2(-5, 36));
             ImGui::BeginGroup(); {
                 ImGui::Spacing();
                 LamantineSDK::tab("Login", 0, "Login");
